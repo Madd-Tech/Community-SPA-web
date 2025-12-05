@@ -1,5 +1,6 @@
 ---
 import Abstract from "../assets/icons/abstract-shape.png";
+import "../assets/styles/carousels.css"
 ---
 
 <main class="relative overflow-hidden">
@@ -111,7 +112,6 @@ import Abstract from "../assets/icons/abstract-shape.png";
 </main>
 
 <script>
-  // Carousel indicator functionality
   const cardsContainer = document.querySelector(".cards-container");
   const indicators = document.querySelectorAll(".indicator");
 
@@ -121,11 +121,8 @@ import Abstract from "../assets/icons/abstract-shape.png";
       const firstCard = cardsContainer.querySelector(".list") as HTMLElement;
       const cardWidth = firstCard?.offsetWidth || 0;
       const gap = 16; // 1rem gap
-
-      // Calculate which card is currently in view
       const activeIndex = Math.round(scrollLeft / (cardWidth + gap));
 
-      // Update active indicator
       indicators.forEach((indicator, index) => {
         if (index === activeIndex) {
           indicator.classList.add("active");
@@ -136,137 +133,3 @@ import Abstract from "../assets/icons/abstract-shape.png";
     });
   }
 </script>
-
-<style>
- 
-
-  .parents .child:nth-child(2) span {
-    font-family: "PoppinsSemiBold";
-    font-size: 15px;
-  }
-
-  /* Cards Container - Responsive Layout (Dipertahankan karena properti scroll & grid khusus) */
-  .cards-container {
-    /* Mobile: Horizontal scrolling carousel */
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-    padding-bottom: 1rem;
-  }
-
-  .cards-container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
-  }
-
-  /* Tablet: 2x2 Grid Layout */
-  @media (min-width: 768px) {
-    .cards-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem; /* Increased gap for tablet */
-      overflow-x: visible;
-    }
-  }
-
-  /* Desktop: Flex Row Layout */
-  @media (min-width: 1024px) {
-    .cards-container {
-      display: flex;
-      flex-direction: row;
-      gap: 1.5rem;
-      overflow-x: visible;
-    }
-  }
-
-  /* Card Styling for .list items */
-  .list {
-    /* Card appearance */
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow:
-      0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
-
-    /* Mobile carousel specific */
-    flex: 0 0 85%;
-    scroll-snap-align: center;
-    min-height: 250px;
-  }
-
-  /* Tablet & Desktop - Remove carousel constraints */
-  @media (min-width: 768px) {
-    .list {
-      flex: 1;
-      scroll-snap-align: unset;
-    }
-  }
-
-  /* Hover effect for cards */
-  .list:hover {
-    box-shadow:
-      0 20px 25px -5px rgba(0, 0, 0, 0.1),
-      0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    transform: translateY(-4px);
-  }
-
-  /* Card text styling */
-  .list p {
-    text-align: center;
-    color: #4a5568;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .list span {
-    font-family: "PoppinsSemiBold";
-    font-size: 18px;
-    color: #2d3748;
-  }
-
-  /* Carousel Indicators */
-  .carousel-indicators {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
-  }
-
-  /* Hide indicators on tablet and desktop */
-  @media (min-width: 768px) {
-    .carousel-indicators {
-      display: none;
-    }
-  }
-
-  .indicator {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #cbd5e0;
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
-
-  .indicator.active {
-    background-color: #4a7fa7;
-    width: 10px;
-    height: 10px;
-  }
-
-  /* Glassmorphism Style for First Child */
-  .glass-card {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-  }
-</style>

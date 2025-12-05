@@ -1,28 +1,28 @@
 ---
-import "../assets/styles/global.css"
-import Navbar from "../components/Navbar.astro"
-import Hero from "../components/Hero.astro"
-import About from "../components/About.astro"
-import logo from "../assets/image/logo.png";
-
+import "../assets/styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Structure from "../components/Structure.astro";
+import ActivityCarousel from "../components/ActivityCarousels.jsx";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<main>
-         <Navbar/>
-         <Hero/>
-		 <About/>
-		</main>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <body>
+    <main>
+      <Navbar />
+      <Hero />
+      <About />
+      <Structure />
+      <ActivityCarousel client:visible />
+    </main>
+  </body>
 </html>
-
-

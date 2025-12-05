@@ -1,0 +1,102 @@
+---
+// src/components/StrukturOrganisasi.astro
+import OrganisasiItem from "./OrganisasiItem";
+
+// 1. Data Struktur Organisasi
+const strukturData = [
+  {
+    jabatan: "Pembina",
+    nama: "Bapak/Ibu Pembina",
+    warnaAwal: "bg-orange-500",
+    warnaHover: "bg-orange-700",
+  },
+  {
+    jabatan: "Ketua",
+    nama: "Nama Ketua",
+    warnaAwal: "bg-blue-600",
+    warnaHover: "bg-green-500",
+  },
+  {
+    jabatan: "Wakil Ketua",
+    nama: "Nama Wak. Ketua",
+    warnaAwal: "bg-blue-600",
+    warnaHover: "bg-green-500",
+  },
+  {
+    jabatan: "Sekretaris",
+    nama: "Nama Sekretaris",
+    warnaAwal: "bg-blue-600",
+    warnaHover: "bg-green-500",
+  },
+
+  {
+    jabatan: "Wakeprogram",
+    nama: "Nama Wakeprogram",
+    warnaAwal: "bg-blue-600",
+    warnaHover: "bg-green-500",
+  },
+  {
+    jabatan: "Ketua Program",
+    nama: "Nama Ketua Program",
+    warnaAwal: "bg-blue-600",
+    warnaHover: "bg-green-500",
+  },
+  {
+    jabatan: "Divisi",
+    nama: "Nama Kepala Divisi",
+    warnaAwal: "bg-blue-600",
+    warnaHover: "bg-green-500",
+  },
+  {
+    jabatan: "Bendahara",
+    nama: "Nama Bendahara",
+    warnaAwal: "bg-blue-600",
+    warnaHover: "bg-green-500",
+  },
+
+  {
+    jabatan: "Humas",
+    nama: "Nama Kepala Humas",
+    warnaAwal: "bg-blue-600",
+    warnaHover: "bg-green-500",
+  },
+  {
+    jabatan: "Pdd",
+    nama: "Nama Kepala Pdd",
+    warnaAwal: "bg-blue-600",
+    warnaHover: "bg-green-500",
+  },
+  {
+    jabatan: "Kerohanian",
+    nama: "Nama Kepala Kerohanian",
+    warnaAwal: "bg-blue-600",
+    warnaHover: "bg-green-500",
+  },
+  {
+    jabatan: "SDM",
+    nama: "Nama Kepala SDM",
+    warnaAwal: "bg-blue-600",
+    warnaHover: "bg-green-500",
+  },
+];
+---
+
+<section class="py-12 px-4 md:px-8">
+  <h2 class="text-3xl font-bold text-center mb-8">Struktur Organisasi</h2>
+
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-6xl mx-auto">
+    {
+      strukturData.map((item) => (
+        // 'client:load' memastikan komponen React di-load dan berjalan di browser.
+        // Ini penting untuk state management seperti isHovered.
+        <OrganisasiItem
+          jabatan={item.jabatan}
+          nama={item.nama}
+          warnaAwal={item.warnaAwal}
+          warnaHover={item.warnaHover}
+          client:load
+        />
+      ))
+    }
+  </div>
+</section>
