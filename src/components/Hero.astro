@@ -1,0 +1,154 @@
+---
+import heroImage from "../assets/image/image.png";
+import "../assets/styles/fonts.css";
+---
+
+<section
+  class="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden bg-gradient-to-br from-gray-50 to-white"
+>
+  <!-- Liquid Shape Background -->
+  <svg
+    class="absolute inset-0 w-full h-full -z-10"
+    viewBox="0 0 1440 900"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="xMidYMid slice"
+  >
+    <defs>
+      <linearGradient
+        id="heroLiquidGradient1"
+        x1="0%"
+        y1="0%"
+        x2="100%"
+        y2="100%"
+      >
+        <stop offset="0%" style="stop-color:#B3CFE5;stop-opacity:0.4"></stop>
+        <stop offset="50%" style="stop-color:#4A7FA7;stop-opacity:0.3"></stop>
+        <stop offset="100%" style="stop-color:#87BFDA;stop-opacity:0.4"></stop>
+      </linearGradient>
+      <linearGradient
+        id="heroLiquidGradient2"
+        x1="100%"
+        y1="0%"
+        x2="0%"
+        y2="100%"
+      >
+        <stop offset="0%" style="stop-color:#6BA3CC;stop-opacity:0.3"></stop>
+        <stop offset="100%" style="stop-color:#B3CFE5;stop-opacity:0.2"></stop>
+      </linearGradient>
+    </defs>
+    <!-- Top liquid blob -->
+    <path
+      d="M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,128C672,128,768,160,864,170.7C960,181,1056,171,1152,149.3C1248,128,1344,96,1392,80L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+      fill="url(#heroLiquidGradient1)"></path>
+    <!-- Bottom liquid blob -->
+    <path
+      d="M0,576L48,586.7C96,597,192,619,288,608C384,597,480,555,576,522.7C672,491,768,469,864,474.7C960,480,1056,512,1152,522.7C1248,533,1344,523,1392,517.3L1440,512L1440,900L1392,900C1344,900,1248,900,1152,900C1056,900,960,900,864,900C768,900,672,900,576,900C480,900,384,900,288,900C192,900,96,900,48,900L0,900Z"
+      fill="url(#heroLiquidGradient2)"></path>
+    <!-- Middle floating blob -->
+    <ellipse
+      cx="300"
+      cy="400"
+      rx="250"
+      ry="200"
+      fill="url(#heroLiquidGradient1)"
+      opacity="0.2"
+    >
+      <animate
+        attributeName="cx"
+        values="300;350;300"
+        dur="20s"
+        repeatCount="indefinite"></animate>
+      <animate
+        attributeName="cy"
+        values="400;450;400"
+        dur="15s"
+        repeatCount="indefinite"></animate>
+    </ellipse>
+    <!-- Right floating blob -->
+    <ellipse
+      cx="1100"
+      cy="500"
+      rx="200"
+      ry="250"
+      fill="url(#heroLiquidGradient2)"
+      opacity="0.2"
+    >
+      <animate
+        attributeName="cx"
+        values="1100;1050;1100"
+        dur="18s"
+        repeatCount="indefinite"></animate>
+      <animate
+        attributeName="cy"
+        values="500;550;500"
+        dur="22s"
+        repeatCount="indefinite"></animate>
+    </ellipse>
+  </svg>
+
+  <div class="container mx-auto max-w-7xl relative z-10">
+    <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+      <!-- Left Side: Typography -->
+      <div class="space-y-6 ml-10">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+          <span
+            style="color:#1A3D63;"
+            class="header bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 bg-clip-text text-transparent"
+          >
+            Welcome to
+          </span>
+          <br />
+          <span class="header"> Gen Z <span class="span">Beriman</span> </span>
+        </h1>
+        <p class="text-lg md:text-xl leading-relaxed max-w-lg">
+          Crafting digital experiences with modern web technologies. Let's build
+          something amazing together.
+        </p>
+        <div class="flex gap-4 pt-4">
+          <a
+            href="#projects"
+            class="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-semibold text-white hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105"
+          >
+            View Projects
+          </a>
+          <a
+            href="#contact"
+            class="px-8 py-3 border border-purple-500 rounded-lg font-semibold text-purple-400 hover:bg-purple-500/10 transition-all duration-300"
+          >
+            Contact Me
+          </a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div
+          class="relative rounded-2xl overflow-hidden shadow-2xl shadow-purple-500/20 hover:shadow-purple-500/40 transition-all duration-300 hover:scale-105"
+        >
+          <img
+            src={heroImage.src}
+            alt="Hero visual"
+            class="h-auto object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-tr from-purple-600/20 to-transparent"
+          >
+          </div>
+        </div>
+        <!-- Decorative glow effect -->
+        <div
+          class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur-2xl opacity-20 -z-10"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Import Poppins font */
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap");
+
+  section {
+    font-family: "Poppins", sans-serif;
+  }
+</style>
