@@ -5,6 +5,8 @@ import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Structure from "../components/Structure.astro";
 import ActivityCarousel from "../components/ActivityCarousels.jsx";
+import TestimonyCarousel from "../components/TestimonyCarousels.jsx";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -23,6 +25,8 @@ import ActivityCarousel from "../components/ActivityCarousels.jsx";
       <About />
       <Structure />
       <ActivityCarousel client:visible />
+      <TestimonyCarousel client:visible />
+      <Footer />
     </main>
   </body>
 </html>

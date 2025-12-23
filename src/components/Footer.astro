@@ -1,0 +1,67 @@
+---
+const socialLinks = [
+  { href: "https://instagram.com", icon: "instagram", label: "Instagram" },
+  { href: "https://tiktok.com", icon: "tiktok", label: "TikTok" },
+  { href: "mailto:contact@example.com", icon: "gmail", label: "Email" },
+];
+
+const logoPath = "/images/logo-light.svg";
+const logoText = "Gen Z Beriman";
+const copyrightText = "Copyright © 2023-2025 Dev GzB | All Rights Reserved";
+
+const getSocialIcon = (iconName) => {
+  switch (iconName) {
+    case "instagram":
+      return `<svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.25-3a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"/></svg>`;
+    case "facebook":
+      return `<svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.564V12h3.046l-.491 3.018h-2.555v6.987A10 10 0 0022 12z" clip-rule="evenodd" /></svg>`;
+    case "tiktok":
+      return `<svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.74-1.75.64-1.24.61-2.73.6-4.12-.01-2.56-.02-5.12-.02-7.68h3.91V.02z"/></svg>`;
+    case "gmail":
+      return `<svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" class="w-6 h-6"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>`;
+    default:
+      return "";
+  }
+};
+---
+
+<footer class="bg-gray-900 text-white py-10 md:py-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0 pb-8 md:pb-12"
+    >
+      <div
+        class="flex flex-col items-center md:items-start text-center md:text-left"
+      >
+        <a href="/" class="flex items-center space-x-3 mb-2">
+          <img src={logoPath} alt="Logo Organisasi" class="w-10 h-10" />
+          <span class="text-xl font-bold">{logoText}</span>
+        </a>
+      </div>
+
+      <div class="flex flex-col items-center md:items-end">
+        <h4 class="text-lg font-semibold mb-3">Follow Us</h4>
+        <div class="flex space-x-4">
+          {
+            socialLinks.map((link) => (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-white hover:text-gray-400 transition-colors duration-300"
+                aria-label={link.label}
+                set:html={getSocialIcon(link.icon)}
+              />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <hr class="border-gray-700 mb-2 md:mb-3" />
+
+    <div class="text-center text-sm text-gray-400">
+      <p>{copyrightText}</p>
+    </div>
+  </div>
+</footer>

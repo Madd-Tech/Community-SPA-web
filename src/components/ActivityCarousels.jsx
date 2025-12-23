@@ -9,7 +9,6 @@ const ActivityCarousel = () => {
   const [modalActivity, setModalActivity] = useState(null);
   const [itemsVisible, setItemsVisible] = useState(1);
 
-  // Update itemsVisible based on screen size
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {

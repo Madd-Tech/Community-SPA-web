@@ -5,10 +5,6 @@ import React, { useState } from 'react';
 const OrganisasiItem = ({ jabatan, nama, warnaAwal, warnaHover }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Kelas Tailwind untuk Item
-  // Kita tambahkan kelas 'transition-all' dan 'duration-300' untuk transisi warna yang mulus.
-  // Dan 'relative' untuk menempatkan dua teks secara absolut di dalamnya.
-  // Adjusted height to h-24 for a more normal look
   const baseClasses = `
     p-4
     h-24
@@ -39,10 +35,6 @@ const OrganisasiItem = ({ jabatan, nama, warnaAwal, warnaHover }) => {
     ease-in-out
   `;
   
-  // Untuk efek "slide down" yang mulus:
-  // Teks Jabatan akan bertransisi ke atas (y-full) saat hover (isHovered: true)
-  // Teks Nama akan bertransisi dari atas (y-full) ke posisi tengah (translate-y-0) saat hover
-
   const jabatanStyle = {
     transform: isHovered ? 'translateY(-100%)' : 'translateY(0)',
   };
@@ -58,7 +50,6 @@ const OrganisasiItem = ({ jabatan, nama, warnaAwal, warnaHover }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Tampilan Default: Jabatan */}
       <div
         className={textClasses}
         style={jabatanStyle}
@@ -66,7 +57,6 @@ const OrganisasiItem = ({ jabatan, nama, warnaAwal, warnaHover }) => {
         <span>{jabatan}</span>
       </div>
 
-      {/* Tampilan Hover: Nama */}
       <div
         className={textClasses}
         style={namaStyle}
