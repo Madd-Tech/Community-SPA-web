@@ -12,44 +12,13 @@ const activityData = [
   },
   {
     id: 1,
-    date: "19 July 2023",
-    image: "/images/activity-image.png",
-    sinopsis: "Lorem ipsum dolor sit amet consectetur. Ipsum dolor sit amet.",
-    fullText: "Detailed description of the activity goes here.",
+    date: "14 Februari 2026",
+    image: "/images/event-tarhib.JPG",
+    sinopsis: "Seminar Tarhib Ramadhan",
+    fullText: "Event Seminar Tarhib untuk menyambut datangnya bulan ramadhan, dengan tema 'Healing yang Hakiki:Antara Self-Love dan Tawakal di Era Digital.' dengan mengundang pemateri Kang Mujang Kurnia S.E CT",
     link: "#"
   },
-  {
-    id: 2,
-    date: "19 July 2024",
-    image: "/images/activity-image.png",
-    sinopsis: "Lorem ipsum dolor sit amet consectetur. Ipsum dolor sit amet.",
-    fullText: "Detailed description of the activity goes here.",
-    link: "#"
-  },
-  {
-    id: 3,
-    date: "19 July 2023",
-    image: "/images/activity-image.png",
-    sinopsis: "Lorem ipsum dolor sit amet consectetur. Ipsum dolor sit amet.",
-    fullText: "Detailed description of the activity goes here.",
-    link: "#"
-  },
-  {
-    id: 4,
-    date: "19 July 2023",
-    image: "/images/activity-image.png",
-    sinopsis: "Lorem ipsum dolor sit amet consectetur. Ipsum dolor sit amet.",
-    fullText: "Detailed description of the activity goes here.",
-    link: "#"
-  },
-  {
-    id: 5,
-    date: "19 July 2023",
-    image: "/images/logo.png",
-    sinopsis: "Lorem ipsum dolor sit amet consectetur. Ipsum dolor sit amet.",
-    fullText: "Detailed description of the activity goes here.",
-    link: "#"
-  }
+ 
 ];
 
 export default activityData;
