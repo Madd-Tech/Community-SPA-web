@@ -45,7 +45,7 @@ const activityData = [
   {
     id: 5,
     date: "19 July 2023",
-    image: "/images/activity-image.png",
+    image: "/images/logo.png",
     sinopsis: "Lorem ipsum dolor sit amet consectetur. Ipsum dolor sit amet.",
     fullText: "Detailed description of the activity goes here.",
     link: "#"
